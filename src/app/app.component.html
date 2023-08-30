@@ -11,6 +11,18 @@
         </tr>
       </thead>
       <tbody>
+        <!-- pipe personalizado -->
+        <tr>
+          <td>{{ namePersonalized }}</td>
+          <td> personalized:true </td>
+          <td> {{ namePersonalized | personalized:true }}</td>
+        </tr>
+        <tr>
+          <td>{{ namePersonalized }}</td>
+          <td> personalized:false </td>
+          <td> {{ namePersonalized | personalized:false }}</td>
+        </tr>
+        <!-- pipes predefinidos -->
         <tr>
           <td>{{ name }}</td>
           <td> uppercase </td>
@@ -85,6 +97,43 @@
           <td>{{ car }}</td>
           <td> json </td>
           <td><pre>{{ car | json }}</pre></td>
+        </tr>
+        <!-- el async es el pipe para manejar la asincronicidad-->
+        <tr>
+          <td>{{ promiseValue }}</td>
+          <td> async </td>
+          <td>{{ promiseValue | async }}</td>
+        </tr>
+        <tr>
+          <td>{{ date }}</td>
+          <td> date </td>
+          <td>{{ date | date }}</td>
+        </tr>
+        <tr>
+          <td>{{ date }}</td>
+          <td> date:'medium' </td>
+          <td>{{ date | date:'medium' }}</td>
+        </tr>
+        <tr>
+          <td>{{ date }}</td>
+          <td> date:'short' </td>
+          <td>{{ date | date:'short' }}</td>
+        </tr>
+        <tr>
+          <td>{{ date }}</td>
+          <td> date:'MMMM - dd' </td>
+          <td>{{ date | date:'MMMM - dd' }}</td>
+        </tr>
+        <!-- selección de idiomas -->
+        <tr>
+          <td>{{ date }}</td>
+          <td> date:'dd/MM/yyyy':'':{{ language }} 
+            <br>
+            <button class="mr-1 btn btn-primary" (click)="language='es'">Español</button>
+            <button class="mr-1 btn btn-secondary" (click)="language='en'">Inglés</button>
+            <button class="mr-1 btn btn-success" (click)="language='fr'">Francés</button>
+          </td>
+          <td>{{ date | date:'MMMM - dd':'':language }}</td>
         </tr>
       </tbody>
     </table>

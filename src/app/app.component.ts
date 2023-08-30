@@ -8,10 +8,19 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   name: string = 'Rodríguez';
+  namePersonalized: string = 'Ramón TulIo jImeNez';
   array: number[] = [1,2,3,4,5,6,7,8,9]; 
   PI: number = Math.PI;
   percentage: number = 0.3423;
   salary: number = 1234.5;
+  date: Date = new Date();
+  language: string = '';
+
+  promiseValue = new Promise<string>( (resolve) => {
+    setTimeout( () => {
+      resolve('llego la data');
+    });
+  });
 
   car = {
     type: '4 puertas pequeño',
@@ -20,4 +29,5 @@ export class AppComponent {
     color: 'negro',
     brand: 'nissan'
   }
+
 }
