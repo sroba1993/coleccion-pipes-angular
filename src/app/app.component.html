@@ -135,7 +135,33 @@
           </td>
           <td>{{ date | date:'MMMM - dd':'':language }}</td>
         </tr>
+
+        <tr>
+          <td>{{ password }}</td>
+          <td> password:{{ active }} 
+            <br>
+            <button class="btn btn-outline-primary" (click)="active=!active">Activar/Desactivar</button>
+          </td>
+          <td>{{ password | password:active }}</td>
+        </tr>
       </tbody>
     </table>
+  </div>
+</div>
+
+<!-- aca se crea pipe para los archivos unsafe value como url o css se deben sanetizar -->
+<h3 class="mt-4">Dom seguro</h3>
+<hr>
+<div class="row">
+  <div class="col">
+    <iframe 
+      width="560" 
+      height="315" 
+      [src]="videoUrl | domsafe" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen>
+    </iframe>
   </div>
 </div>
