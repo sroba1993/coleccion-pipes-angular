@@ -11,12 +11,12 @@ export class PersonalizedPipe implements PipeTransform {
 
     if(isAllCapitalized) {
       names = names.map( name => {
-        return name[0].toUpperCase() + name.substr(1);
+        return name[0].toUpperCase() + name.slice(1);
       });
       return names.join(' ');
     }
 
-    names[0] = names[0][0].toUpperCase() + names[0].substr(1);
+    names[0] = names[0][0].toUpperCase() + names[0].slice(1);
     return names.join(' ');
   }
 
